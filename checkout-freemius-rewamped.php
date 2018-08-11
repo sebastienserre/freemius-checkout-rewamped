@@ -6,7 +6,7 @@
  * Version:     1.0
  * Author:      Sébastien Serre
  * Author URI:  https://thivinfo.com
- * Text Domain: checkout-freemius-rewamped-rewamped
+ * Text Domain: checkout-freemius-rewamped
  */
 
 
@@ -17,6 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
+define( 'PLUGIN_VERSION', '1.0.0' );
 /**
  * Add Freemius Checkout Shortcode
  *

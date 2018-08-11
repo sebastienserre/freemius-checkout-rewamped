@@ -23,6 +23,7 @@ When embedded, the user will see a simple "Buy Now" button on the front-end. Cli
 This Plugin is a fork of the original one [Checkout-Freemius](https://wordpress.org/plugins/checkout-freemius/) which add the possibility to add a button with WordPress Widget.
 
 
+**This plugin has been rewamped to add it a WordPress Widget.** It is now easiest to share your Freemius Products
 = Usage =
 
 The plugin uses **[freemius_checkout]** shortcode to embed the "Buy Now" button.
