@@ -81,5 +81,47 @@ add_shortcode( 'freemius_checkout', 'freemius_checkout_shortcode' );
 
 function freemius_checkout_load_file() {
 	include_once plugin_dir_path( __FILE__ ) . '/class/class-freemius-checkout-widget.php';
+	include_once plugin_dir_path( __FILE__ ) . '/pro/freemius-cpt.php';
 }
 add_action('plugins_loaded', 'freemius_checkout_load_file');
+
+require_once plugin_dir_path( __FILE__ ) . '/pro/freemius-cpt.php';
+
+register_activation_hook( __FILE__, 'freemius_checkout_flush_rewrites' );
+
+function freemius_checkout_flush_rewrites() {
+	freemius_cpt();
+	flush_rewrite_rules();
+}
+
+// Create a helper function for easy SDK access.
+function checkout_fs() {
+	global $checkout_fs;
+
+	if ( ! isset( $checkout_fs ) ) {
+		// Include Freemius SDK.
+		require_once dirname(__FILE__) . '/freemius/start.php';
+
+		$checkout_fs = fs_dynamic_init( array(
+			'id'                  => '2428',
+			'slug'                => 'checkout-freemius-rewamped',
+			'type'                => 'plugin',
+			'public_key'          => 'pk_b0ac736e083501c3550df85849737',
+			'is_premium'          => false,
+			'has_addons'          => false,
+			'has_paid_plans'      => false,
+			'menu'                => array(
+				'first-path'     => 'plugins.php',
+				'account'        => false,
+				'contact'        => false,
+			),
+		) );
+	}
+
+	return $checkout_fs;
+}
+
+// Init Freemius.
+checkout_fs();
+// Signal that SDK was initiated.
+do_action( 'checkout_fs_loaded' );
