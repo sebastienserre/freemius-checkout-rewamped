@@ -3,7 +3,7 @@ Contributors: sebastienserre
 Tags: freemius, checkout, buy button
 Requires at least: 4.0
 Tested up to: 4.9
-Stable tag: 1.0
+Stable tag: 1.1
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
@@ -44,6 +44,12 @@ Example:
 
 `[freemius_checkout name="Press Elements" plugin_id="761" plan_id="1078" pricing_id="928" public_key="pk_fe2850d57f7d4f206aefaa106b91f" button_id="purchase" button="Buy Now"]`
 
+**Pro Version**
+* The Pro Version add une CPT which allow you to have a post by product, a custom single template.
+
+Sell Easily your digital Freemius products with WordPress
+
+
 == Screenshots ==
 1. Freemius Checkout
 
@@ -68,6 +74,10 @@ The theme needs to use jQuery to display the checkout popup. If it doesn't enque
 * MySQL version 5.7 or greater.
 
 == Changelog ==
+
+= 1.1 - 12 August 2018 =
+* Add the Pro Version
+* Re-organize code
 
 = 1.0 =
 
