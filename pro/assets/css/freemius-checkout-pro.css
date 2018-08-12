@@ -1,0 +1,42 @@
+.freemius_checkout_main_content {
+    padding: 20px;
+    width: 64%;
+    float: left;
+}
+
+.freemius_checkout_content,
+.freemius_checkout_thumbnail{
+    float: left;
+}
+
+.freemius_checkout_price_block,
+.freemius_checkout_price_section{
+    clear: both;
+}
+
+.freemius_checkout_plan_details {
+    display: flex;
+    justify-content: space-around;
+}
+
+.freemius_checkout_price_section {
+    padding-top: 40px;
+}
+
+.freemius_checkout_plan {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.freemius_checkout_price_block {
+    padding-bottom: 20px;
+}
+
+button.freemius-checkout-purchase {
+    display: block;
+    margin: 0 auto 20px;
+    width: 50%;
+    text-align: center;
+}

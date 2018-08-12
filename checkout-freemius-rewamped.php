@@ -7,9 +7,9 @@
  * Author:      Sébastien Serre
  * Author URI:  https://thivinfo.com
  * Text Domain: checkout-freemius-rewamped
+ *
  * @fs_premium_only /pro/, /.idea/
  */
-
 
 
 // Exit if accessed directly
@@ -17,8 +17,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
+/**
+ * Define Constant
+ */
 define( 'PLUGIN_VERSION', '1.0.0' );
+define( 'FREEMIUS_CHECKOUT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'FREEMIUS_CHECKOUT_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'FREEMIUS_CHECKOUT_PLUGIN_DIR', untrailingslashit( FREEMIUS_CHECKOUT_PLUGIN_PATH ) );
 /**
  * Add Freemius Checkout Shortcode
  *
@@ -46,31 +51,42 @@ function freemius_checkout_shortcode( $atts ) {
 
 	ob_start();
 	?>
-	<button id="<?php echo esc_attr( $atts['button_id'] ); ?>" class="<?php echo esc_attr( $atts['button_class'] ); ?>"><?php echo $atts['button']; ?></button>
+	<button id="<?php echo esc_attr( $atts['button_id'] ); ?>"
+	        class="<?php echo esc_attr( $atts['button_class'] ); ?>"><?php echo $atts['button']; ?></button>
 	<script src="https://checkout.freemius.com/checkout.min.js"></script>
 	<script>
-	(function(){
-		var handler_<?php echo esc_attr( $atts['button_id'] ); ?> = FS.Checkout.configure({
-<?php
-if ( $atts['plugin_id'] ) printf( 'plugin_id: %s, ', $atts['plugin_id'] );
-if ( $atts['plan_id'] ) printf( 'plan_id: %s, ', $atts['plan_id'] );
-if ( $atts['pricing_id'] ) printf( 'pricing_id: %s, ', $atts['pricing_id'] );
-if ( $atts['public_key'] ) printf( 'public_key: "%s", ', $atts['public_key'] );
-if ( $atts['image'] ) printf( 'image: "%s", ', $atts['image'] );
-?>
-
-		});
-
-		jQuery('#<?php echo esc_attr( $atts['button_id'] ); ?>').on('click', function (e) {
-			handler_<?php echo esc_attr( $atts['button_id'] ); ?>.open({
-				name: '<?php echo $atts['name']; ?>',
-				success: function(response) {
-					//alert( response.user.email );
+        (function () {
+            var handler_<?php echo esc_attr( $atts['button_id'] ); ?> = FS.Checkout.configure({
+				<?php
+				if ( $atts['plugin_id'] ) {
+					printf( 'plugin_id: %s, ', $atts['plugin_id'] );
 				}
-			});
-			e.preventDefault();
-		});
-	})();
+				if ( $atts['plan_id'] ) {
+					printf( 'plan_id: %s, ', $atts['plan_id'] );
+				}
+				if ( $atts['pricing_id'] ) {
+					printf( 'pricing_id: %s, ', $atts['pricing_id'] );
+				}
+				if ( $atts['public_key'] ) {
+					printf( 'public_key: "%s", ', $atts['public_key'] );
+				}
+				if ( $atts['image'] ) {
+					printf( 'image: "%s", ', $atts['image'] );
+				}
+				?>
+
+            });
+
+            jQuery('#<?php echo esc_attr( $atts['button_id'] ); ?>').on('click', function (e) {
+                handler_<?php echo esc_attr( $atts['button_id'] ); ?>.open({
+                    name: '<?php echo $atts['name']; ?>',
+                    success: function (response) {
+                        //alert( response.user.email );
+                    }
+                });
+                e.preventDefault();
+            });
+        })();
 	</script>
 	<?php
 	$output = ob_get_contents();
@@ -78,18 +94,23 @@ if ( $atts['image'] ) printf( 'image: "%s", ', $atts['image'] );
 
 	return $output;
 }
+
 add_shortcode( 'freemius_checkout', 'freemius_checkout_shortcode' );
 
 function freemius_checkout_load_file() {
 	include_once plugin_dir_path( __FILE__ ) . '/class/class-freemius-checkout-widget.php';
 	if ( checkout_fs()->is__premium_only() ) {
 		include_once plugin_dir_path( __FILE__ ) . '/pro/freemius-cpt.php';
+		include_once plugin_dir_path( __FILE__ ) . '/pro/3rd_party/acf/acf.php';
+		//include_once plugin_dir_path( __FILE__ ) . '/pro/inc/acf-fields.php';
 	}
 }
-add_action('plugins_loaded', 'freemius_checkout_load_file');
+
+add_action( 'plugins_loaded', 'freemius_checkout_load_file' );
 
 if ( checkout_fs()->is__premium_only() ) {
 	require_once plugin_dir_path( __FILE__ ) . '/pro/freemius-cpt.php';
+	require_once plugin_dir_path( __FILE__ ) . '/pro/freemius-checkout-pro-main.php';
 }
 
 register_activation_hook( __FILE__, 'freemius_checkout_flush_rewrites' );
@@ -112,7 +133,7 @@ function checkout_fs() {
 		}
 
 		// Include Freemius SDK.
-		require_once dirname(__FILE__) . '/freemius/start.php';
+		require_once dirname( __FILE__ ) . '/freemius/start.php';
 
 		$checkout_fs = fs_dynamic_init( array(
 			'id'                  => '2428',
@@ -125,8 +146,8 @@ function checkout_fs() {
 			'has_addons'          => false,
 			'has_paid_plans'      => true,
 			'menu'                => array(
-				'first-path'     => 'plugins.php',
-				'contact'        => false,
+				'first-path' => 'plugins.php',
+				'contact'    => false,
 			),
 			// Set the SDK to work in a sandbox mode (for development & testing).
 			// IMPORTANT: MAKE SURE TO REMOVE SECRET KEY BEFORE DEPLOYMENT.
@@ -141,3 +162,37 @@ function checkout_fs() {
 checkout_fs();
 // Signal that SDK was initiated.
 do_action( 'checkout_fs_loaded' );
+
+add_filter('acf/settings/path', 'freemius_checkout_acf_settings_path__premium_only');
+
+function freemius_checkout_acf_settings_path__premium_only( $path ) {
+
+	// update path
+	$path = FREEMIUS_CHECKOUT_PLUGIN_PATH . '/pro/3rd_party/acf/';
+
+	// return
+	return $path;
+
+}
+
+add_filter('acf/settings/dir', 'freemius_checkout_acf_settings_dir__premium_only');
+
+function freemius_checkout_acf_settings_dir__premium_only( $dir ) {
+
+	// update path
+	$dir = FREEMIUS_CHECKOUT_PLUGIN_URL . '/pro/3rd_party/acf/';
+
+	// return
+	return $dir;
+
+}
+
+//add_action( 'plugins_loaded', 'freemius_checkout_hide_acf__premium_only');
+function freemius_checkout_hide_acf__premium_only(){
+	add_filter('acf/settings/show_admin', '__return_false');
+}
+
+add_action('wp_enqueue_scripts', 'freemius_checkout_pro_css__premium_only');
+function freemius_checkout_pro_css__premium_only(){
+	wp_enqueue_style('freemius-checkout-pro', FREEMIUS_CHECKOUT_PLUGIN_URL . 'pro/assets/css/freemius-checkout-pro.css');
+}
