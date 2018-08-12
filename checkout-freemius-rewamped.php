@@ -62,7 +62,7 @@ function checkout_fs() {
 		}
 
 		// Include Freemius SDK.
-		require_once dirname( __FILE__ ) . '/freemius/start.php';
+		require_once dirname(__FILE__) . '/freemius/start.php';
 
 		$checkout_fs = fs_dynamic_init( array(
 			'id'                  => '2428',
@@ -70,13 +70,15 @@ function checkout_fs() {
 			'type'                => 'plugin',
 			'public_key'          => 'pk_b0ac736e083501c3550df85849737',
 			'is_premium'          => true,
-			// If your plugin is a serviceware, set this option to false.
-			'has_premium_version' => true,
 			'has_addons'          => false,
 			'has_paid_plans'      => true,
+			'trial'               => array(
+				'days'               => 30,
+				'is_require_payment' => true,
+			),
 			'menu'                => array(
-				'first-path' => 'plugins.php',
-				'contact'    => false,
+				'first-path'     => 'plugins.php',
+				'contact'        => false,
 			),
 			// Set the SDK to work in a sandbox mode (for development & testing).
 			// IMPORTANT: MAKE SURE TO REMOVE SECRET KEY BEFORE DEPLOYMENT.
