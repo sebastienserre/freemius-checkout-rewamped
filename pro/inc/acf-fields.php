@@ -10,7 +10,7 @@ if( function_exists('acf_add_local_field_group') ):
 		'fields' => array(
 			array(
 				'key' => 'field_5b6f37d6a041e',
-				'label' => 'Public ID',
+				'label' => 'Plugin ID',
 				'name' => 'freemius_checkout_public_id',
 				'type' => 'text',
 				'instructions' => '',
