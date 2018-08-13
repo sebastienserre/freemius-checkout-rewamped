@@ -1,4 +1,4 @@
-=== Freemius Checkout Rewamped ===
+=== Easy Sell Freemius Products ===
 Contributors: sebastienserre
 Tags: freemius, checkout, buy button
 Requires at least: 4.6
@@ -22,8 +22,8 @@ When embedded, the user will see a simple "Buy Now" button on the front-end. Cli
 
 This Plugin is a fork of the original one [Checkout-Freemius](https://wordpress.org/plugins/checkout-freemius/) which add the possibility to add a button with WordPress Widget.
 
+This plugin has been rewamped to add it a WordPress Widget.** It is now easiest to share your Freemius Products
 
-**This plugin has been rewamped to add it a WordPress Widget.** It is now easiest to share your Freemius Products
 = Usage =
 
 The plugin uses **[freemius_checkout]** shortcode to embed the "Buy Now" button.
@@ -45,7 +45,8 @@ Example:
 `[freemius_checkout name="Press Elements" plugin_id="761" plan_id="1078" pricing_id="928" public_key="pk_fe2850d57f7d4f206aefaa106b91f" button_id="purchase" button="Buy Now"]`
 
 **Pro Version**
-* The Pro Version add une CPT which allow you to have a post by product, a custom single template.
+* The Pro Version add a CPT which allow you to have a post by product and a custom single template.
+* New Widget to list your product where ever you want.
 
 Sell Easily your digital Freemius products with WordPress
 
@@ -59,19 +60,8 @@ Sell Easily your digital Freemius products with WordPress
 
 The theme needs to use jQuery to display the checkout popup. If it doesn't enqueue jQuery, the button won't open the checkout popup.
 
-= What are the plugin requirements? =
-
-**Minimum Requirements**
-
-* WordPress version 4.0 or greater.
-* PHP version 5.6 or greater.
-* MySQL version 5.0 or greater.
-
-**Recommended Requirements**
-
-* The latest WordPress version.
-* The latest PHP version.
-* MySQL version 5.7 or greater.
+= How to have all my products in my WordPress Website ?
+Only the pro version allow this feature. You'll find (for the moment) a custom post type with a single template (customizable).
 
 == Changelog ==
 
