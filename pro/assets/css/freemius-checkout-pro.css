@@ -1,12 +1,12 @@
 .freemius_checkout_main_content {
-    padding: 20px;
-    width: 64%;
-    float: left;
+    display: flex;
+    justify-content: center;
 }
 
 .freemius_checkout_content,
 .freemius_checkout_thumbnail{
     float: left;
+    margin-right: 20px;
 }
 
 .freemius_checkout_price_block,
@@ -21,6 +21,8 @@
 
 .freemius_checkout_price_section {
     padding-top: 40px;
+    width: 40%;
+    float: left;
 }
 
 .freemius_checkout_plan {
