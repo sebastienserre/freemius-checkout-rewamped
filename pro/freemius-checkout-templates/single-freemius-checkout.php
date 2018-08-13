@@ -62,7 +62,7 @@ get_header();
 												if ( ! empty( get_sub_field( 'freemius_checkout_monthly_price' ) ) ) {
 													?>
 													<div class="freemius_checkout_price_block">
-														<h4><?php _e( 'Montly Price', 'checkout-freemius-rewamped-pro' ); ?></h4>
+														<h4><?php _e( 'Monthly Price', 'checkout-freemius-rewamped-pro' ); ?></h4>
 														<p><?php the_sub_field( 'freemius_checkout_monthly_price' ); ?>
 															$</p>
 													</div>
