@@ -31,12 +31,10 @@ get_header();
 				<div class="freemius_checkout_price_section">
 					<?php
 					if ( have_rows( 'freemius_checkout_plans' ) ) { // flexible
-						//die('have');
 						while ( have_rows( 'freemius_checkout_plans' ) ) { //flexible
 							the_row();
 							if ( 'freemius_checkout_add_new_plans' === get_row_layout() ) {
 								$plugin_plan_id = get_sub_field( 'freemius_checkout_plan_id' );
-
 								$pricing_id = get_sub_field( 'freemius_checkout_pricing' );
 
 								if ( have_rows( 'freemius_checkout_pricing' ) ) {
