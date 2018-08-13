@@ -3,7 +3,7 @@ Contributors: sebastienserre
 Tags: freemius, checkout, buy button
 Requires at least: 4.6
 Tested up to: 4.9
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0

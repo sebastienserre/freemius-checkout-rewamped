@@ -35,6 +35,9 @@ get_header();
 						while ( have_rows( 'freemius_checkout_plans' ) ) { //flexible
 							the_row();
 							if ( 'freemius_checkout_add_new_plans' === get_row_layout() ) {
+								$plugin_plan_id = get_sub_field( 'freemius_checkout_plan_id' );
+
+								$pricing_id = get_sub_field( 'freemius_checkout_pricing' );
 
 								if ( have_rows( 'freemius_checkout_pricing' ) ) {
 
@@ -42,8 +45,7 @@ get_header();
 										the_row();
 										$plugin_id      = get_field( 'freemius_checkout_public_id' );
 										$plugin_pub_key = get_field( 'freemius_checkout_public_key' );
-										$plugin_plan_id = get_sub_field( 'freemius_checkout_plan_id' );
-										$pricing_id     = get_sub_field( 'freemius_checkout_pricing' );
+
 										?>
 										<div class="freemius_checkout_plan">
 											<div class="freemius_checkout_plan_details freemius_checkout_title">
@@ -52,7 +54,7 @@ get_header();
 												<?php } ?>
 												<?php
 												if ( ! empty( get_sub_field( 'freemius_checkout_trial' ) ) ) {
-													$trial = get_sub_field( 'freemius_checkout_trial' );
+												$trial = get_sub_field( 'freemius_checkout_trial' );
 												?>
 												<p><?php printf( esc_html__( '%d days trial', 'checkout-freemius-rewamped-pro' ), $trial ); ?></p>
 											</div>
@@ -62,7 +64,7 @@ get_header();
 												if ( ! empty( get_sub_field( 'freemius_checkout_monthly_price' ) ) ) {
 													?>
 													<div class="freemius_checkout_price_block">
-														<h4><?php _e( 'Montly Price', 'checkout-freemius-rewamped-pro' ); ?></h4>
+														<h4><?php _e( 'Monthly Price', 'checkout-freemius-rewamped-pro' ); ?></h4>
 														<p><?php the_sub_field( 'freemius_checkout_monthly_price' ); ?>
 															$</p>
 													</div>
@@ -71,7 +73,7 @@ get_header();
 												if ( ! empty( get_sub_field( 'freemius_checkout_annual_price' ) ) ) {
 													?>
 													<div class="freemius_checkout_price_block">
-														<h4><?php _e( 'Anual Price', 'checkout-freemius-rewamped-pro' ); ?></h4>
+														<h4><?php _e( 'Annual Price', 'checkout-freemius-rewamped-pro' ); ?></h4>
 														<p><?php the_sub_field( 'freemius_checkout_annual_price' ); ?>
 															$</p>
 													</div>
@@ -97,11 +99,14 @@ get_header();
 											<script src="https://checkout.freemius.com/checkout.min.js"></script>
 											<script>
                                                 var handler_purchase = FS.Checkout.configure({
-													<?php if ( ! empty( $plugin_id ) ){ ?>plugin_id: '<?php echo $plugin_id; }?>',
-													<?php if( ! empty( $plugin_plan_id ) ) { ?>plan_id: '<?php echo $plugin_plan_id; } ?>',
+													<?php if ( ! empty( $plugin_id ) ){ ?>
+                                                    plugin_id: '<?php echo $plugin_id; } ?>',
+													<?php if( ! empty( $plugin_plan_id ) ) { ?>
+                                                    plan_id: '<?php echo $plugin_plan_id; } ?>',
 													<?php if( ! empty( $plugin_pub_key ) ) { ?>
                                                     public_key: '<?php echo $plugin_pub_key; } ?>',
-													<?php if ( ! empty( $pricing_id ) ){ ?>pricing_id: '<?php echo $pricing_id; } ?>',
+													<?php if ( ! empty( $pricing_id ) ){ ?>
+                                                    pricing_id: '<?php echo $pricing_id; } ?>',
                                                 });
 
                                                 jQuery(document).ready(function ($) {
@@ -134,5 +139,4 @@ get_header();
 		?>
 	</div>
 <?php
-get_sidebar();
 get_footer();
