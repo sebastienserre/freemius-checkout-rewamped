@@ -1,6 +1,6 @@
 === Easy Sell Freemius Products ===
 Contributors: sebastienserre
-Tags: freemius, checkout, buy button
+Tags: freemius, checkout, buy button, e-shop, e-commerce, ecommerce, store, sales, sell, shop, cart, downloadable, downloads, digital downloads, wp-ecommerce
 Requires at least: 4.6
 Tested up to: 4.9
 Stable tag: 1.2.0
