@@ -37,6 +37,12 @@ if ( ! function_exists('freemius_cpt') ) {
 			'items_list_navigation' => __( 'Freemius Products list navigation', 'checkout-freemius-rewamped-pro' ),
 			'filter_items_list'     => __( 'Filter Freemius Products list', 'checkout-freemius-rewamped-pro' ),
 		);
+		$rewrite = array(
+			'slug'                  => 'shop',
+			'with_front'            => true,
+			'pages'                 => true,
+			'feeds'                 => true,
+		);
 		$args = array(
 			'label'                 => __( 'Freemius Product', 'checkout-freemius-rewamped-pro' ),
 			'description'           => __( 'List all Freemius Product on your WP Website', 'checkout-freemius-rewamped-pro' ),
@@ -54,6 +60,7 @@ if ( ! function_exists('freemius_cpt') ) {
 			'has_archive'           => true,
 			'exclude_from_search'   => false,
 			'publicly_queryable'    => true,
+			'rewrite'               => $rewrite,
 			'capability_type'       => 'page',
 			'show_in_rest'          => true,
 		);
