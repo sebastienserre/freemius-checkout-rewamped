@@ -93,7 +93,7 @@ class Freemius_Checkout_Widget_Pro extends WP_Widget {
 
 		foreach ( $products as $product ) { ?>
 
-			<h3><?php echo get_the_title( $product->ID ); ?></h3>
+			<h3><a href="<?php echo get_the_permalink( $product->ID ); ?>" title="<?php echo get_the_title( $product->ID ); ?>"><?php echo get_the_title( $product->ID ); ?></a></h3>
 			<?php
 			if ( 'yes' === $instance['thumbnail'] && has_post_thumbnail( $product->ID ) ) {
 				?>
@@ -111,7 +111,7 @@ class Freemius_Checkout_Widget_Pro extends WP_Widget {
 			if ( 'yes' === $instance['excerpt'] && ! empty( $excerpt ) ) {
 				?>
 				<div class="freemius_checkout_product_excerpt">
-					<?php echo $excerpt; ?>
+					<a href="<?php echo get_the_permalink( $product->ID ); ?>" title="<?php echo get_the_title( $product->ID ); ?>"><?php echo $excerpt; ?></a>
 				</div>
 				<?php
 			}
