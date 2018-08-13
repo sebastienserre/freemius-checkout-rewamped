@@ -32,6 +32,7 @@ function freemius_checkout_load_file() {
 	if ( checkout_fs()->is__premium_only() ) {
 		include_once plugin_dir_path( __FILE__ ) . '/pro/freemius-cpt.php';
 		include_once plugin_dir_path( __FILE__ ) . '/pro/3rd_party/acf/acf.php';
+		include_once plugin_dir_path( __FILE__ ) . '/pro/inc/acf-fields.php';
 		include_once plugin_dir_path( __FILE__ ) . '/pro/class/class-freemius-checkout-widget-pro.php';
 	}
 }
