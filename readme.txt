@@ -3,7 +3,7 @@ Contributors: sebastienserre
 Tags: freemius, checkout, buy button
 Requires at least: 4.0
 Tested up to: 4.9
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
@@ -74,6 +74,9 @@ The theme needs to use jQuery to display the checkout popup. If it doesn't enque
 * MySQL version 5.7 or greater.
 
 == Changelog ==
+
+= 1.2.0 - 13 august 2018 =
+* Add a Widget
 
 = 1.1 - 12 August 2018 =
 * Add the Pro Version
