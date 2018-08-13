@@ -3,7 +3,7 @@
  * Plugin Name: Freemius Checkout Rewamped
  * Description: Sell WordPress Plugins & Themes. Anywhere. Using Freemius Checkout "Buy Now" button.
  * Plugin URI:  https://wordpress.org/plugins/checkout-freemius-rewamped/
- * Version:     1.1.1
+ * Version:     1.2.0
  * Author:      Sébastien Serre
  * Author URI:  https://thivinfo.com
  * Text Domain: checkout-freemius-rewamped
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define Constant
  */
-define( 'PLUGIN_VERSION', '1.1.1' );
+define( 'PLUGIN_VERSION', '1.2.0' );
 define( 'FREEMIUS_CHECKOUT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'FREEMIUS_CHECKOUT_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'FREEMIUS_CHECKOUT_PLUGIN_DIR', untrailingslashit( FREEMIUS_CHECKOUT_PLUGIN_PATH ) );
@@ -32,7 +32,7 @@ function freemius_checkout_load_file() {
 	if ( checkout_fs()->is__premium_only() ) {
 		include_once plugin_dir_path( __FILE__ ) . '/pro/freemius-cpt.php';
 		include_once plugin_dir_path( __FILE__ ) . '/pro/3rd_party/acf/acf.php';
-		include_once plugin_dir_path( __FILE__ ) . '/pro/inc/acf-fields.php';
+		include_once plugin_dir_path( __FILE__ ) . '/pro/class/class-freemius-checkout-widget-pro.php';
 	}
 }
 
@@ -119,7 +119,7 @@ function freemius_checkout_acf_settings_dir__premium_only( $dir ) {
 
 }
 
-//add_action( 'plugins_loaded', 'freemius_checkout_hide_acf__premium_only');
+add_action( 'plugins_loaded', 'freemius_checkout_hide_acf__premium_only');
 function freemius_checkout_hide_acf__premium_only(){
 	add_filter('acf/settings/show_admin', '__return_false');
 }

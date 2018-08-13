@@ -108,3 +108,4 @@ function checkout_freemius_template_loader( $template ) {
 
 }
 add_filter( 'template_include', 'checkout_freemius_template_loader' );
+

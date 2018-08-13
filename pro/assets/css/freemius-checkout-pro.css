@@ -42,3 +42,15 @@ button.freemius-checkout-purchase {
     width: 50%;
     text-align: center;
 }
+
+/**
+Widget
+ */
+.freemius_checkout_product_thumbnail {
+    width: 150px;
+    height: 150px;
+    float: left;
+}
+.freemius_checkout_product_excerpt {
+    height: 150px;
+}
