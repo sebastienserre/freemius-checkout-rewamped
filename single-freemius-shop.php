@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: Freemius Checkout Rewamped
+ * Plugin Name: Simple Freemius Shop
  * Description: Sell WordPress Plugins & Themes. Anywhere. Using Freemius Checkout "Buy Now" button.
  * Plugin URI:  https://wordpress.org/plugins/checkout-freemius-rewamped/
  * Version:     1.2.0
  * Author:      Sébastien Serre
  * Author URI:  https://thivinfo.com
- * Text Domain: checkout-freemius-rewamped
+ * Text Domain: simple-freemius-shop
  *
  * @fs_premium_only /pro/, /.idea/
  */
@@ -68,7 +68,7 @@ function checkout_fs() {
 
 		$checkout_fs = fs_dynamic_init( array(
 			'id'                  => '2428',
-			'slug'                => 'checkout-freemius-rewamped',
+			'slug'                => 'simple-freemius-shop',
 			'type'                => 'plugin',
 			'public_key'          => 'pk_b0ac736e083501c3550df85849737',
 			'is_premium'          => true,
