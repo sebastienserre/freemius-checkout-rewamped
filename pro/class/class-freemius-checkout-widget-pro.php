@@ -106,7 +106,7 @@ class Freemius_Checkout_Widget_Pro extends WP_Widget {
 			<?php
 			$excerpt = $product->post_excerpt;
 			if ( empty( $excerpt ) && ! empty( $product->post_content ) ) {
-				$excerpt = substr( $product->post_content, 0, 150 );
+				$excerpt = wp_trim_words( $product->post_content, 50, '...' );
 			}
 			if ( 'yes' === $instance['excerpt'] && ! empty( $excerpt ) ) {
 				?>
