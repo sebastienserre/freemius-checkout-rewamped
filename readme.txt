@@ -3,7 +3,7 @@ Contributors: sebastienserre
 Tags: freemius, checkout, buy button, e-shop, e-commerce, ecommerce, store, sales, sell, shop, cart, downloadable, downloads, digital downloads, wp-ecommerce
 Requires at least: 4.6
 Tested up to: 4.9
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
@@ -47,6 +47,7 @@ Example:
 **Pro Version**
 * The Pro Version add a CPT which allow you to have a post by product and a custom single template.
 * New Widget to list your product where ever you want.
+* New Shortcode to display your products where ever you want.
 
 Sell Easily your digital Freemius products with WordPress
 
@@ -64,6 +65,8 @@ The theme needs to use jQuery to display the checkout popup. If it doesn't enque
 Only the pro version allow this feature. You'll find (for the moment) a custom post type with a single template (customizable).
 
 == Changelog ==
+=1.3.0 - 14 august 2018 =
+* Add a Shortcode
 
 = 1.2.0 - 13 august 2018 =
 * Add a Widget

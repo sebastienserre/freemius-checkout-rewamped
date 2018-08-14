@@ -3,7 +3,7 @@
  * Plugin Name: Simple Freemius Shop
  * Description: Sell WordPress Plugins & Themes. Anywhere. Using Freemius Checkout "Buy Now" button.
  * Plugin URI:  https://wordpress.org/plugins/checkout-freemius-rewamped/
- * Version:     1.2.0
+ * Version:     1.3.0
  * Author:      Sébastien Serre
  * Author URI:  https://thivinfo.com
  * Text Domain: simple-freemius-shop
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define Constant
  */
-define( 'PLUGIN_VERSION', '1.2.0' );
+define( 'PLUGIN_VERSION', '1.3.0' );
 define( 'FREEMIUS_CHECKOUT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'FREEMIUS_CHECKOUT_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'FREEMIUS_CHECKOUT_PLUGIN_DIR', untrailingslashit( FREEMIUS_CHECKOUT_PLUGIN_PATH ) );
