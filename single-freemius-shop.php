@@ -34,6 +34,8 @@ function freemius_checkout_load_file() {
 		include_once plugin_dir_path( __FILE__ ) . '/pro/3rd_party/acf/acf.php';
 		include_once plugin_dir_path( __FILE__ ) . '/pro/inc/acf-fields.php';
 		include_once plugin_dir_path( __FILE__ ) . '/pro/class/class-freemius-checkout-widget-pro.php';
+		include_once plugin_dir_path( __FILE__ ) . '/pro/class/class-spf-shortcode-list.php';
+		define( 'TEXTDOMAINPRO', 'checkout-freemius-rewamped-pro');
 	}
 }
 
