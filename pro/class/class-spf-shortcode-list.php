@@ -66,6 +66,7 @@ class Spf_Shortcode_List {
 					?>
 					<a href="<?php the_permalink(); ?>"
 					   title="<?php the_title(); ?>"><?php _e( 'Read More', TEXTDOMAINPRO ) ?></a>
+					<div style="clear: both"></div>
 				</div>
 				<?php
 			}
