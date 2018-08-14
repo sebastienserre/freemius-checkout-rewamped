@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
-
+<!-- copy from here -->
 	<div class='freemius_checkout_main_content'>
 		<?php
 		if ( have_posts() ) {
@@ -136,5 +136,6 @@ get_header();
 		}
 		?>
 	</div>
+	<!-- To here -->
 <?php
 get_footer();
