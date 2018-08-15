@@ -38,7 +38,7 @@ if ( ! function_exists('freemius_cpt') ) {
 			'filter_items_list'     => __( 'Filter Freemius Products list', 'checkout-freemius-rewamped-pro' ),
 		);
 		$rewrite = array(
-			'slug'                  => 'shop',
+			'slug'                  => 'freemius-product',
 			'with_front'            => true,
 			'pages'                 => true,
 			'feeds'                 => true,

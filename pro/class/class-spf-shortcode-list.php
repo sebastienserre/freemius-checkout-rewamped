@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Spf_Shortcode_List {
 	public function __construct() {
-		add_shortcode( 'spf_product_list', array( $this, 'sfspro_sc_product_list' ) );
+		add_shortcode( 'sfs_product_list', array( $this, 'sfspro_sc_product_list' ) );
 	}
 
 	public function sfspro_sc_product_list( $atts ) {
@@ -19,7 +19,7 @@ class Spf_Shortcode_List {
 				'excerpt'   => 'true',
 			),
 			$atts,
-			'spf_product_list'
+			'sfs_product_list'
 		);
 
 		$args = array(
@@ -69,11 +69,67 @@ class Spf_Shortcode_List {
 					<div style="clear: both"></div>
 				</div>
 				<?php
+				if ( have_rows( 'freemius_checkout_plans' ) ) { // flexible
+					while ( have_rows( 'freemius_checkout_plans' ) ) { //flexible
+						the_row();
+						if ( 'freemius_checkout_add_new_plans' === get_row_layout() ) {
+							$plugin_plan_id = get_sub_field( 'freemius_checkout_plan_id' );
+							$pricing_id     = get_sub_field( 'freemius_checkout_pricing' );
+							if ( have_rows( 'freemius_checkout_pricing' ) ) {
+
+								$i = 1;
+								while ( have_rows( 'freemius_checkout_pricing' ) && $i < 2 ) {
+									the_row();
+
+									$plugin_id      = get_field( 'freemius_checkout_public_id' );
+									$plugin_pub_key = get_field( 'freemius_checkout_public_key' );
+									$price          = get_sub_field( 'freemius_checkout_monthly_price' );
+
+									$i ++;
+								}
+							}
+
+							?>
+							<div class="buy_section">
+								<button id="purchase"
+								        class="purchase"><?php printf( esc_html__( 'From %s $', TEXTDOMAINPRO ), $price ); ?></button>
+
+								<script src="https://checkout.freemius.com/checkout.min.js"></script>
+								<script>
+                                    var handler_purchase = FS.Checkout.configure({
+										<?php if ( ! empty( $plugin_id ) ){ ?>
+                                        plugin_id: '<?php echo $plugin_id; } ?>',
+										<?php if( ! empty( $plugin_plan_id ) ) { ?>
+                                        plan_id: '<?php echo $plugin_plan_id; } ?>',
+										<?php if( ! empty( $plugin_pub_key ) ) { ?>
+                                        public_key: '<?php echo $plugin_pub_key; } ?>',
+										<?php if ( ! empty( $pricing_id ) ){ ?>
+                                        pricing_id: '<?php echo $pricing_id[0]['freemius_checkout_pricing_id']; } ?>',
+                                    });
+
+                                    jQuery(document).ready(function ($) {
+                                        $('.purchase').on('click', function (e) {
+                                            handler_purchase.open({
+                                                name: 'Test Product',
+                                                licenses: $('#licenses').val(),
+                                                // You can consume the response for after purchase logic.
+                                                success: function (response) {
+                                                    alert(response.user.email);
+                                                }
+                                            });
+                                            e.preventDefault();
+                                        })
+                                    });
+								</script>
+							</div>
+							<?php
+						}
+					}
+				}
+
+
 			}
 		}
-	}
-
-
+		}
 }
-
-new Spf_Shortcode_List();
+			new Spf_Shortcode_List();
