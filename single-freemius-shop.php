@@ -8,7 +8,7 @@
  * Author URI:  https://thivinfo.com
  * Text Domain: simple-freemius-shop
  *
- * @fs_premium_only /pro/, /.idea/
+ * @fs_premium_only /pro/, .idea/
  */
 
 
@@ -53,6 +53,16 @@ function freemius_checkout_flush_rewrites() {
 		freemius_cpt();
 		flush_rewrite_rules();
 	}
+}
+
+add_action( 'plugins_loaded', 'sfs_pro_load_textdomain__premium_only' );
+/**
+ * Load plugin textdomain.
+ *
+ * @since 1.0.0
+ */
+function sfs_pro_load_textdomain__premium_only() {
+	load_plugin_textdomain( TEXTDOMAINPRO, false, basename( dirname( __FILE__ ) ) . '/pro/languages' );
 }
 
 // Create a helper function for easy SDK access.
