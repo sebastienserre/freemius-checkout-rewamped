@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
-<!-- copy from here -->
+	<!-- copy from here -->
 	<div class='freemius_checkout_main_content'>
 		<?php
 		if ( have_posts() ) {
@@ -35,7 +35,7 @@ get_header();
 							the_row();
 							if ( 'freemius_checkout_add_new_plans' === get_row_layout() ) {
 								$plugin_plan_id = get_sub_field( 'freemius_checkout_plan_id' );
-								$pricing_id = get_sub_field( 'freemius_checkout_pricing' );
+								$pricing_id     = get_sub_field( 'freemius_checkout_pricing' );
 
 								if ( have_rows( 'freemius_checkout_pricing' ) ) {
 
@@ -106,12 +106,22 @@ get_header();
 													<?php if ( ! empty( $pricing_id ) ){ ?>
                                                     pricing_id: '<?php echo $pricing_id; } ?>',
                                                 });
+											</script>
 
+											<!-- Freemius Button Script -->
+										</div>
+										<?php
+									}
+								}
+							}
+						}
+						?>
+																	<script>
                                                 jQuery(document).ready(function ($) {
                                                     $('.purchase').on('click', function (e) {
                                                         handler_purchase.open({
                                                             name: 'Test Product',
-                                                            licenses: $('#licenses').val(),
+                                                            licenses: $('#licenses').val(3),
                                                             // You can consume the response for after purchase logic.
                                                             success: function (response) {
                                                                 alert(response.user.email);
@@ -121,13 +131,7 @@ get_header();
                                                     })
                                                 });
 											</script>
-											<!-- Freemius Button Script -->
-										</div>
-										<?php
-									}
-								}
-							}
-						}
+						<?php
 					}
 					?>
 				</div>
