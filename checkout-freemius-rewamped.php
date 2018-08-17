@@ -24,10 +24,12 @@ define( 'PLUGIN_VERSION', '1.3.4' );
 define( 'FREEMIUS_CHECKOUT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'FREEMIUS_CHECKOUT_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'FREEMIUS_CHECKOUT_PLUGIN_DIR', untrailingslashit( FREEMIUS_CHECKOUT_PLUGIN_PATH ) );
+define( 'DOMAIN', 'checkout-freemius-rewamped');
 
 function freemius_checkout_load_file() {
 	include_once plugin_dir_path( __FILE__ ) . '/class/class-freemius-checkout-widget.php';
 	include_once plugin_dir_path( __FILE__ ) . '/inc/checkout-freemius-shortcode.php';
+	include_once plugin_dir_path( __FILE__ ) . '/admin/settings.php';
 
 	if ( checkout_fs()->is__premium_only() ) {
 		include_once plugin_dir_path( __FILE__ ) . '/pro/freemius-cpt.php';
@@ -70,11 +72,6 @@ function checkout_fs() {
 	global $checkout_fs;
 
 	if ( ! isset( $checkout_fs ) ) {
-		// Activate multisite network integration.
-		if ( ! defined( 'WP_FS__PRODUCT_2428_MULTISITE' ) ) {
-			define( 'WP_FS__PRODUCT_2428_MULTISITE', true );
-		}
-
 		// Include Freemius SDK.
 		require_once dirname(__FILE__) . '/freemius/start.php';
 
@@ -91,8 +88,12 @@ function checkout_fs() {
 				'is_require_payment' => true,
 			),
 			'menu'                => array(
-				'first-path'     => 'plugins.php',
+				'slug'           => 'checkout-freemius-settings',
+				'first-path'     => 'options-general.php?page=checkout-freemius-settings-pricing',
 				'contact'        => false,
+				'parent'         => array(
+					'slug' => 'options-general.php',
+				),
 			),
 			// Set the SDK to work in a sandbox mode (for development & testing).
 			// IMPORTANT: MAKE SURE TO REMOVE SECRET KEY BEFORE DEPLOYMENT.
