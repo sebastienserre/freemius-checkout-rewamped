@@ -24,7 +24,6 @@ define( 'PLUGIN_VERSION', '1.3.4' );
 define( 'FREEMIUS_CHECKOUT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'FREEMIUS_CHECKOUT_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'FREEMIUS_CHECKOUT_PLUGIN_DIR', untrailingslashit( FREEMIUS_CHECKOUT_PLUGIN_PATH ) );
-define( 'DOMAIN', 'checkout-freemius-rewamped');
 
 function freemius_checkout_load_file() {
 	include_once plugin_dir_path( __FILE__ ) . '/class/class-freemius-checkout-widget.php';
@@ -37,7 +36,7 @@ function freemius_checkout_load_file() {
 		include_once plugin_dir_path( __FILE__ ) . '/pro/inc/acf-fields.php';
 		include_once plugin_dir_path( __FILE__ ) . '/pro/class/class-freemius-checkout-widget-pro.php';
 		include_once plugin_dir_path( __FILE__ ) . '/pro/class/class-spf-shortcode-list.php';
-		define( 'TEXTDOMAINPRO', 'checkout-freemius-rewamped-pro');
+		include_once plugin_dir_path( __FILE__ ) . '/pro/admin/settings.php';
 	}
 }
 
@@ -77,7 +76,7 @@ function checkout_fs() {
 
 		$checkout_fs = fs_dynamic_init( array(
 			'id'                  => '2428',
-			'slug'                => 'simple-freemius-shop',
+			'slug'                => 'checkout-freemius-rewamped',
 			'type'                => 'plugin',
 			'public_key'          => 'pk_b0ac736e083501c3550df85849737',
 			'is_premium'          => true,
