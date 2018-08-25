@@ -10,7 +10,8 @@ function cfr_settings_init() {
 
 function cfr_settings_page() {
 	$tabs = array(
-		'help' => __( 'help', 'simple-freemius-shop' )
+		'general' => __( 'General', 'simple-freemius-shop' ),
+		'help'    => __( 'help', 'simple-freemius-shop' ),
 	);
 	$tabs = apply_filters( 'cfr_settings_tabs', $tabs );
 	if ( isset( $_GET['tab'] ) ) {
@@ -21,21 +22,21 @@ function cfr_settings_page() {
 		$active_tab = 'general';
 	}
 	?>
-	<div class="wrap">
-		<h2><?php _e( 'Settings', 'simple-freemius-shop' ); ?></h2>
-		<!--<div class="description">This is description of the page.</div>-->
+    <div class="wrap">
+        <h2><?php _e( 'Settings', 'simple-freemius-shop' ); ?></h2>
+        <!--<div class="description">This is description of the page.</div>-->
 		<?php settings_errors(); ?>
 
-		<h2 class="nav-tab-wrapper">
+        <h2 class="nav-tab-wrapper">
 			<?php
 			foreach ( $tabs as $tab => $value ) {
 				?>
-				<a href="<?php echo esc_url( admin_url( 'options-general.php?page=checkout-freemius-settings&tab=' . $tab ) ); ?>"
-				   class="nav-tab <?php echo $active_tab === $tab ? 'nav-tab-active' : ''; ?>"><?php echo $value ?></a>
+                <a href="<?php echo esc_url( admin_url( 'options-general.php?page=checkout-freemius-settings&tab=' . $tab ) ); ?>"
+                   class="nav-tab <?php echo $active_tab === $tab ? 'nav-tab-active' : ''; ?>"><?php echo $value ?></a>
 			<?php } ?>
-		</h2>
+        </h2>
 
-		<form method="post" action="options.php">
+        <form method="post" action="options.php">
 			<?php
 
 			switch ( $active_tab ) {
@@ -43,26 +44,69 @@ function cfr_settings_page() {
 					settings_fields( 'cfr-help' );
 					do_settings_sections( 'cfr-help' );
 					break;
+				case 'general':
+					settings_fields( 'cfr-general' );
+					do_settings_sections( 'cfr-general' );
+					break;
 
 			}
 			submit_button( 'Save Changes', 'primary', 'cfr_settings' );
 			?>
-		</form>
+        </form>
 
 
-	</div>
+    </div>
 	<?php
 }
 
 add_action( 'admin_init', 'cfr_register_settings' );
 function cfr_register_settings() {
 	add_settings_section( 'cfr-help', '', 'cfr_help', 'cfr-help' );
+	add_settings_section( 'cfr-general', '', '', 'cfr-general' );
 
 	register_setting( 'cfr-help', 'help' );
+	register_setting( 'cfr-general', 'cfr-general' );
+
+	add_settings_field( 'cfr-shop-page', __( 'shop page', 'check-freemius-rewamped-pro' ), 'cfr_general_shop', 'cfr-general', 'cfr-general' );
 
 
 }
 
-function cfr_help() {
-	echo 'Test';
+function cfr_help() { ?>
+    <div class="help-block">
+        <h3><?php _e( 'Shortcodes', 'checkout-freemius-rewamped' ); ?></h3>
+        <div class="help-list">
+            <p>[freemius_checkout] <?php _e( 'with their params:', 'checkout-freemius-rewamped' ); ?></p>
+            <div class="help-details">
+                <p>plugin_id:</p>
+                <p>plan_id:</p>
+                <p>pricing_id:</p>
+                <p>public_key:</p>
+                <p>image:</p>
+                <p>name:</p>
+                <p>button:</p>
+                <p>button_id:</p>
+                <p>button_class:</p>
+            </div>
+        </div>
+    </div>
+	<?php
+}
+
+function cfr_general_shop() {
+	$shop_pages  = get_pages();
+	$cfr_general = get_option( 'cfr-general' );
+	?>
+
+    <select name="cfr-general[cfr-shop-page]">
+        <option><?php _e( 'Choose your shop page', 'checkout-freemius-rewamped' ); ?></option>
+		<?php
+		foreach ( $shop_pages as $shop_page ) {
+			?>
+            <option value="<?php echo $shop_page->ID; ?>" <?php selected( $cfr_general['cfr-shop-page'], $shop_page->ID ); ?>><?php echo $shop_page->post_title; ?></option>
+			<?php
+		}
+		?>
+    </select>
+	<?php
 }
