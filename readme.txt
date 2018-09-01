@@ -66,7 +66,7 @@ Only the pro version allow this feature. You'll find (for the moment) a custom p
 
 == Changelog ==
 
-= 1.3.5 = to be defined
+= 1.3.5 = 1st of september
 * add option to select shop page (Pro Version)
 
 = 1.3.4 = 16 august 2018
