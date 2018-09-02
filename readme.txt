@@ -3,7 +3,7 @@ Contributors: sebastienserre
 Tags: freemius, checkout, buy button, e-shop, e-commerce, ecommerce, store, sales, sell, shop, cart, downloadable, downloads, digital downloads, wp-ecommerce
 Requires at least: 4.6
 Tested up to: 4.9
-Stable tag: 1.3.5
+Stable tag: 1.3.6
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
@@ -66,7 +66,10 @@ Only the pro version allow this feature. You'll find (for the moment) a custom p
 
 == Changelog ==
 
-= 1.3.5 = 1st of september
+= 1.3.6 = 2nd of september 2018
+* add Customer account shortcode
+
+= 1.3.5 = 1st of september 2018
 * add option to select shop page (Pro Version)
 
 = 1.3.4 = 16 august 2018
