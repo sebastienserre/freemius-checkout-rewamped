@@ -3,12 +3,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly.
 
-if ( ! function_exists('freemius_cpt') ) {
+if ( ! function_exists( 'freemius_cpt' ) ) {
 
 // Register Custom Post Type
 	function freemius_cpt() {
 
-		$labels = array(
+		$labels  = array(
 			'name'                  => _x( 'Freemius Products', 'Post Type General Name', 'checkout-freemius-rewamped-pro' ),
 			'singular_name'         => _x( 'Freemius Product', 'Post Type Singular Name', 'checkout-freemius-rewamped-pro' ),
 			'menu_name'             => __( 'Freemius Products', 'checkout-freemius-rewamped-pro' ),
@@ -38,34 +38,35 @@ if ( ! function_exists('freemius_cpt') ) {
 			'filter_items_list'     => __( 'Filter Freemius Products list', 'checkout-freemius-rewamped-pro' ),
 		);
 		$rewrite = array(
-			'slug'                  => 'freemius-product',
-			'with_front'            => true,
-			'pages'                 => true,
-			'feeds'                 => true,
+			'slug'       => 'freemius-product',
+			'with_front' => true,
+			'pages'      => true,
+			'feeds'      => true,
 		);
-		$args = array(
-			'label'                 => __( 'Freemius Product', 'checkout-freemius-rewamped-pro' ),
-			'description'           => __( 'List all Freemius Product on your WP Website', 'checkout-freemius-rewamped-pro' ),
-			'labels'                => $labels,
-			'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions', 'excerpt', 'author' ),
-			'hierarchical'          => false,
-			'public'                => true,
-			'show_ui'               => true,
-			'show_in_menu'          => true,
-			'menu_position'         => 5,
-			'menu_icon'             => 'dashicons-products',
-			'show_in_admin_bar'     => true,
-			'show_in_nav_menus'     => true,
-			'can_export'            => true,
-			'has_archive'           => true,
-			'exclude_from_search'   => false,
-			'publicly_queryable'    => true,
-			'rewrite'               => $rewrite,
-			'capability_type'       => 'page',
-			'show_in_rest'          => true,
+		$args    = array(
+			'label'               => __( 'Freemius Product', 'checkout-freemius-rewamped-pro' ),
+			'description'         => __( 'List all Freemius Product on your WP Website', 'checkout-freemius-rewamped-pro' ),
+			'labels'              => $labels,
+			'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'excerpt', 'author' ),
+			'hierarchical'        => false,
+			'public'              => true,
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'menu_position'       => 5,
+			'menu_icon'           => 'dashicons-products',
+			'show_in_admin_bar'   => true,
+			'show_in_nav_menus'   => true,
+			'can_export'          => true,
+			'has_archive'         => true,
+			'exclude_from_search' => false,
+			'publicly_queryable'  => true,
+			'rewrite'             => $rewrite,
+			'capability_type'     => 'page',
+			'show_in_rest'        => true,
 		);
 		register_post_type( 'freemius-cpt', $args );
 	}
+
 	add_action( 'init', 'freemius_cpt', 0 );
 
 }
