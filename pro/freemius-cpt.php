@@ -47,7 +47,7 @@ if ( ! function_exists('freemius_cpt') ) {
 			'label'                 => __( 'Freemius Product', 'checkout-freemius-rewamped-pro' ),
 			'description'           => __( 'List all Freemius Product on your WP Website', 'checkout-freemius-rewamped-pro' ),
 			'labels'                => $labels,
-			'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions', 'excerpt' ),
+			'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions', 'excerpt', 'author' ),
 			'hierarchical'          => false,
 			'public'                => true,
 			'show_ui'               => true,
