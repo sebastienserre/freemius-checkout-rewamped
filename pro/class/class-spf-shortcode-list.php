@@ -58,8 +58,7 @@ class Spf_Shortcode_List {
 					if ( 'true' === $atts['excerpt'] ) {
 						?>
 						<div class="freemius_checkout_product_excerpt">
-							<a href="<?php echo get_the_permalink(); ?>"
-							   title="<?php echo get_the_title(); ?>"><?php the_excerpt(); ?></a>
+							<?php the_excerpt(); ?>
 						</div>
 						<?php
 					}
