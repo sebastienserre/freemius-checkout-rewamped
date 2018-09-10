@@ -64,7 +64,7 @@ class Spf_Shortcode_List {
 					}
 					?>
 					<a href="<?php the_permalink(); ?>"
-					   title="<?php the_title(); ?>"><?php _e( 'Read More', TEXTDOMAINPRO ) ?></a>
+					   title="<?php the_title(); ?>"><?php _e( 'Read More', 'simple-freemius-shop' ) ?></a>
 
 
 				<?php
@@ -92,7 +92,7 @@ class Spf_Shortcode_List {
 							<div style="clear: both"></div>
 							<div class="buy_section">
 								<button id="purchase"
-								        class="purchase"><?php printf( esc_html__( 'From %s $', TEXTDOMAINPRO ), $price ); ?></button>
+								        class="purchase"><?php printf( esc_html__( 'From %s $', 'simple-freemius-shop' ), $price ); ?></button>
 
 								<script src="https://checkout.freemius.com/checkout.min.js"></script>
 								<script>

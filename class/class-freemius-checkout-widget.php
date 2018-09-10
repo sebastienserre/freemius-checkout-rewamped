@@ -136,7 +136,7 @@ class Freemius_Checkout_Widget extends WP_Widget {
 	}
 
 	public function freemius_load_script() {
-		wp_register_script( 'FreemiusJS', 'https://checkout.freemius.com/checkout.min.js', array( 'jquery' ), PLUGIN_VERSION, true );
+		wp_register_script( 'FreemiusJS', 'https://checkout.freemius.com/checkout.min.js', array( 'jquery' ), SFS_VERSION, true );
 	}
 }
 
