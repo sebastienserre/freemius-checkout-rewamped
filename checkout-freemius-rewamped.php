@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define Constant
  */
-define( 'PLUGIN_VERSION', '1.3.6' );
+define( 'SFS_VERSION', '1.3.6' );
 define( 'FREEMIUS_CHECKOUT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'FREEMIUS_CHECKOUT_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'FREEMIUS_CHECKOUT_PLUGIN_DIR', untrailingslashit( FREEMIUS_CHECKOUT_PLUGIN_PATH ) );
@@ -70,7 +70,7 @@ add_action( 'plugins_loaded', 'sfs_pro_load_textdomain__premium_only' );
  * @since 1.0.0
  */
 function sfs_pro_load_textdomain__premium_only() {
-	load_plugin_textdomain( TEXTDOMAINPRO, false, basename( dirname( __FILE__ ) ) . '/pro/languages' );
+	load_plugin_textdomain( 'checkout-freemius-rewamped', false, basename( dirname( __FILE__ ) ) . '/pro/languages' );
 }
 
 // Create a helper function for easy SDK access.
