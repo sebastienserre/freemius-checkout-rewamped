@@ -15,7 +15,6 @@ class Freemius_Checkout_Widget_Pro extends WP_Widget {
 			$widget_args
 		);
 		add_action( 'widgets_init', array( $this, 'freemius_checkout_init_widget_pro' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'freemius_load_script_pro' ) );
 	}
 
 	public function freemius_checkout_init_widget_pro() {
