@@ -54,7 +54,7 @@ get_header();
 												if ( ! empty( get_sub_field( 'freemius_checkout_trial' ) ) ) {
 												$trial = get_sub_field( 'freemius_checkout_trial' );
 												?>
-												<p><?php printf( esc_html__( '%d days trial', 'checkout-freemius-rewamped-pro' ), $trial ); ?></p>
+												<p><?php printf( esc_html__( '%d days trial', 'checkout-freemius-rewamped' ), $trial ); ?></p>
 											</div>
 											<?php } ?>
 											<div class="freemius_checkout_plan_details freemius_checkout_price">
@@ -62,7 +62,7 @@ get_header();
 												if ( ! empty( get_sub_field( 'freemius_checkout_monthly_price' ) ) ) {
 													?>
 													<div class="freemius_checkout_price_block">
-														<h4><?php _e( 'Monthly Price', 'checkout-freemius-rewamped-pro' ); ?></h4>
+														<h4><?php _e( 'Monthly Price', 'checkout-freemius-rewamped' ); ?></h4>
 														<p><?php the_sub_field( 'freemius_checkout_monthly_price' ); ?>
 															$</p>
 													</div>
@@ -71,7 +71,7 @@ get_header();
 												if ( ! empty( get_sub_field( 'freemius_checkout_annual_price' ) ) ) {
 													?>
 													<div class="freemius_checkout_price_block">
-														<h4><?php _e( 'Annual Price', 'checkout-freemius-rewamped-pro' ); ?></h4>
+														<h4><?php _e( 'Annual Price', 'checkout-freemius-rewamped' ); ?></h4>
 														<p><?php the_sub_field( 'freemius_checkout_annual_price' ); ?>
 															$</p>
 													</div>
@@ -80,7 +80,7 @@ get_header();
 												if ( ! empty( get_sub_field( 'freemius_checkout_lifetime_price' ) ) ) {
 													?>
 													<div class="freemius_checkout_price_block">
-														<h4><?php _e( 'Lifetime Price', 'checkout-freemius-rewamped-pro' ); ?></h4>
+														<h4><?php _e( 'Lifetime Price', 'checkout-freemius-rewamped' ); ?></h4>
 														<p><?php the_sub_field( 'freemius_checkout_lifetime_price' ); ?>
 															$</p>
 													</div>
@@ -90,7 +90,7 @@ get_header();
 											</div>
 											<!-- Freemius Button Script -->
 											<button id="purchase"
-											        class="purchase freemius-checkout-purchase"><?php _e( 'Buy it!', 'checkout-freemius-rewamped-pro' ) ?></button>
+											        class="purchase freemius-checkout-purchase"><?php _e( 'Buy it!', 'checkout-freemius-rewamped' ) ?></button>
 											<?php
 
 											?>
