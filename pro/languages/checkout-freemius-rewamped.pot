@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Freemius Shop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-21 17:12+0000\n"
+"POT-Creation-Date: 2018-09-21 19:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -234,10 +234,9 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: pro/class/class-spf-shortcode-list.php:95
-#: pro/class/class-freemius-checkout-widget-pro.php:141
+#: pro/class/class-spf-shortcode-list.php:106
 #, php-format
-msgid "From %s $"
+msgid "From %d $"
 msgstr ""
 
 #: pro/class/class-freemius-checkout-widget-pro.php:10
@@ -258,6 +257,11 @@ msgstr ""
 
 #: pro/class/class-freemius-checkout-widget-pro.php:61
 msgid "Display the Excerpt:"
+msgstr ""
+
+#: pro/class/class-freemius-checkout-widget-pro.php:141
+#, php-format
+msgid "From %s $"
 msgstr ""
 
 #. Name of the plugin

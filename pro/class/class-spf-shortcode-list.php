@@ -82,7 +82,18 @@ class Spf_Shortcode_List {
 
 									$plugin_id      = get_field( 'freemius_checkout_public_id' );
 									$plugin_pub_key = get_field( 'freemius_checkout_public_key' );
-									$price          = get_sub_field( 'freemius_checkout_monthly_price' );
+									$monthly_price          = get_sub_field( 'freemius_checkout_monthly_price' );
+									$annual_price          = get_sub_field( 'freemius_checkout_annual_price' );
+									$lifetime_price          = get_sub_field( 'freemius_checkout_lifetime_price' );
+									if ( !empty( $lifetime_price ) ){
+										$price = $lifetime_price;
+									}
+									if ( !empty( $annual_price ) ){
+										$price = $annual_price;
+									}
+									if ( !empty( $monthly_price ) ){
+										$price = $monthly_price;
+									}
 
 									$i ++;
 								}
@@ -92,7 +103,7 @@ class Spf_Shortcode_List {
 							<div style="clear: both"></div>
 							<div class="buy_section">
 								<button id="purchase"
-								        class="purchase"><?php printf( esc_html__( 'From %s $', 'checkout-freemius-rewamped' ), $price ); ?></button>
+								        class="purchase"><?php printf( esc_html__( 'From %d $', 'checkout-freemius-rewamped' ), $price ); ?></button>
 
 								<script src="https://checkout.freemius.com/checkout.min.js"></script>
 								<script>
