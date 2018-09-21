@@ -7,7 +7,7 @@ class Freemius_Checkout_Widget extends WP_Widget {
 	public function __construct() {
 		$widget_args = array(
 			'classname'   => 'Freemius Checkout Widget',
-			'description' => __( 'Add a Button Freemius Checkout every where in WordPress', 'simple-freemius-shop' ),
+			'description' => __( 'Add a Button Freemius Checkout every where in WordPress', 'checkout-freemius-rewamped' ),
 		);
 		parent::__construct(
 			'freemius-checkout-widget',
@@ -30,55 +30,55 @@ class Freemius_Checkout_Widget extends WP_Widget {
 	public function form( $instance ) {
 		?>
 		<p>
-			<label for="<?php echo esc_html( $this->get_field_name( 'title' ) ); ?>"> <?php esc_attr_e( 'Title:', 'simple-freemius-shop' ); ?>
+			<label for="<?php echo esc_html( $this->get_field_name( 'title' ) ); ?>"> <?php esc_attr_e( 'Title:', 'checkout-freemius-rewamped' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo esc_html( $this->get_field_id( 'title' ) ); ?>"
 			       name="<?php echo $this->get_field_name( 'title' ); ?>" type="text"
 			       value="<?php echo $instance['title']; ?>"/>
 		</p>
-		<label for="<?php echo esc_html( $this->get_field_name( 'description' ) ); ?>"> <?php esc_attr_e( 'Description:', 'simple-freemius-shop' ); ?>
+		<label for="<?php echo esc_html( $this->get_field_name( 'description' ) ); ?>"> <?php esc_attr_e( 'Description:', 'checkout-freemius-rewamped' ); ?>
 		</label>
 		<textarea class="widefat" id="<?php echo esc_html( $this->get_field_id( 'description' ) ); ?>"
 		          name="<?php echo $this->get_field_name( 'description' ); ?>"
 		><?php echo esc_html( $instance['description'] ); ?></textarea>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_name( 'plugin_id' ); ?>"> <?php esc_attr_e( 'plugin_id:', 'simple-freemius-shop' ); ?>
+			<label for="<?php echo $this->get_field_name( 'plugin_id' ); ?>"> <?php esc_attr_e( 'plugin_id:', 'checkout-freemius-rewamped' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'plugin_id' ); ?>"
 			       name="<?php echo $this->get_field_name( 'plugin_id' ); ?>" type="text"
 			       value="<?php echo $instance['plugin_id']; ?>"/>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_name( 'plan_id' ); ?>"> <?php esc_attr_e( 'plan_id:', 'simple-freemius-shop' ); ?>
+			<label for="<?php echo $this->get_field_name( 'plan_id' ); ?>"> <?php esc_attr_e( 'plan_id:', 'checkout-freemius-rewamped' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'plan_id' ); ?>"
 			       name="<?php echo $this->get_field_name( 'plan_id' ); ?>" type="text"
 			       value="<?php echo $instance['plan_id']; ?>"/>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_name( 'pricing_id' ); ?>"> <?php esc_attr_e( 'pricing_id:', 'simple-freemius-shop' ); ?>
+			<label for="<?php echo $this->get_field_name( 'pricing_id' ); ?>"> <?php esc_attr_e( 'pricing_id:', 'checkout-freemius-rewamped' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'pricing_id' ); ?>"
 			       name="<?php echo $this->get_field_name( 'pricing_id' ); ?>" type="text"
 			       value="<?php echo $instance['pricing_id']; ?>"/>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_name( 'public_key' ); ?>"> <?php esc_attr_e( 'public_key:', 'simple-freemius-shop' ); ?>
+			<label for="<?php echo $this->get_field_name( 'public_key' ); ?>"> <?php esc_attr_e( 'public_key:', 'checkout-freemius-rewamped' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'public_key' ); ?>"
 			       name="<?php echo $this->get_field_name( 'public_key' ); ?>" type="text"
 			       value="<?php echo $instance['public_key']; ?>"/>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_name( 'button_text' ); ?>"> <?php esc_attr_e( 'button text:', 'simple-freemius-shop' ); ?>
+			<label for="<?php echo $this->get_field_name( 'button_text' ); ?>"> <?php esc_attr_e( 'button text:', 'checkout-freemius-rewamped' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'button_text' ); ?>"
 			       name="<?php echo $this->get_field_name( 'button_text' ); ?>" type="text"
 			       value="<?php echo $instance['button_text']; ?>"/>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_name( 'image' ); ?>"> <?php esc_attr_e( 'image:', 'simple-freemius-shop' ); ?>
+			<label for="<?php echo $this->get_field_name( 'image' ); ?>"> <?php esc_attr_e( 'image:', 'checkout-freemius-rewamped' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'image' ); ?>"
 			       name="<?php echo $this->get_field_name( 'image' ); ?>" type="text"

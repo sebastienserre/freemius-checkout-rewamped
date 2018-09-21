@@ -20,7 +20,7 @@ function freemius_checkout_shortcode( $atts ) {
 			'public_key'   => '',
 			'image'        => '',
 			'name'         => '',
-			'button'       => esc_html__( 'Buy Now', 'simple-freemius-shop' ),
+			'button'       => esc_html__( 'Buy Now', 'checkout-freemius-rewamped' ),
 			'button_id'    => 'purchase',
 			'button_class' => '',
 		),

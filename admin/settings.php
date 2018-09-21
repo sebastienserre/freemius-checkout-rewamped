@@ -5,13 +5,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 add_action( 'admin_menu', 'cfr_settings_init' );
 function cfr_settings_init() {
-	add_options_page( __( 'Checkout Freemius Settings', 'simple-freemius-shop' ), __( 'Checkout Freemius', 'simple-freemius-shop' ), 'manage_options', 'checkout-freemius-settings', 'cfr_settings_page' );
+	add_options_page( __( 'Checkout Freemius Settings', 'checkout-freemius-rewamped' ), __( 'Checkout Freemius', 'checkout-freemius-rewamped' ), 'manage_options', 'checkout-freemius-settings', 'cfr_settings_page' );
 }
 
 function cfr_settings_page() {
 	$tabs = array(
-		'general' => __( 'General', 'simple-freemius-shop' ),
-		'help'    => __( 'help', 'simple-freemius-shop' ),
+		'general' => __( 'General', 'checkout-freemius-rewamped' ),
+		'help'    => __( 'help', 'checkout-freemius-rewamped' ),
 	);
 	$tabs = apply_filters( 'cfr_settings_tabs', $tabs );
 	if ( isset( $_GET['tab'] ) ) {
@@ -23,7 +23,7 @@ function cfr_settings_page() {
 	}
 	?>
     <div class="wrap">
-        <h2><?php _e( 'Settings', 'simple-freemius-shop' ); ?></h2>
+        <h2><?php _e( 'Settings', 'checkout-freemius-rewamped' ); ?></h2>
         <!--<div class="description">This is description of the page.</div>-->
 		<?php settings_errors(); ?>
 
@@ -50,7 +50,7 @@ function cfr_settings_page() {
 					break;
 
 			}
-			submit_button( 'Save Changes', 'primary', 'cfr_settings' );
+			submit_button( __( 'Save Changes', 'checkout-freemius-rewamped' ), 'primary', 'cfr_settings' );
 			?>
         </form>
 
@@ -67,7 +67,7 @@ function cfr_register_settings() {
 	register_setting( 'cfr-help', 'help' );
 	register_setting( 'cfr-general', 'cfr-general' );
 
-	add_settings_field( 'cfr-shop-page', __( 'shop page', 'check-freemius-rewamped-pro' ), 'cfr_general_shop', 'cfr-general', 'cfr-general' );
+	add_settings_field( 'cfr-shop-page', __( 'shop page', 'checkout-freemius-rewamped' ), 'cfr_general_shop', 'cfr-general', 'cfr-general' );
 
 
 }
