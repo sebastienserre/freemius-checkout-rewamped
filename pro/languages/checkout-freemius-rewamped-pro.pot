@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Freemius Shop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-29 15:45+0200\n"
+"POT-Creation-Date: 2018-09-29 16:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.1.1\n"
-"X-Poedit-KeywordsList: _e;__;_x;_n\n"
+"X-Poedit-KeywordsList: _e;__;_x;_n;esc_html__\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: 3rd_party\n"
@@ -21,8 +21,19 @@ msgstr ""
 msgid "Display your latest products"
 msgstr ""
 
+#: class/class-freemius-checkout-widget-pro.php:141
+#: class/class-spf-shortcode-list.php:106
+#, php-format
+msgid "From %s $"
+msgstr ""
+
 #: class/class-spf-shortcode-list.php:67
 msgid "Read More"
+msgstr ""
+
+#: freemius-checkout-templates/single-freemius-checkout.php:57
+#, php-format
+msgid "%d days trial"
 msgstr ""
 
 #: freemius-checkout-templates/single-freemius-checkout.php:65
@@ -143,4 +154,9 @@ msgstr ""
 
 #: freemius-cpt.php:48
 msgid "List all Freemius Product on your WP Website"
+msgstr ""
+
+#: inc/template-tag.php:47
+#, php-format
+msgid "From %d $"
 msgstr ""

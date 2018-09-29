@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Plugins - Simple Freemius Shop - Stable (latest "
 "release)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-29 15:45+0200\n"
-"PO-Revision-Date: 2018-09-29 15:46+0200\n"
+"POT-Creation-Date: 2018-09-29 16:15+0200\n"
+"PO-Revision-Date: 2018-09-29 16:16+0200\n"
 "Last-Translator: Sébastien SERRE <sebastien@thivinfo.com>\n"
 "Language-Team: French (France)\n"
 "Language: fr_FR\n"
@@ -20,9 +20,20 @@ msgstr ""
 msgid "Display your latest products"
 msgstr "Afficher vos derniers articles"
 
+#: class/class-freemius-checkout-widget-pro.php:141
+#: class/class-spf-shortcode-list.php:106
+#, php-format
+msgid "From %s $"
+msgstr "A partir de %s $"
+
 #: class/class-spf-shortcode-list.php:67
 msgid "Read More"
 msgstr "En savoir plus"
+
+#: freemius-checkout-templates/single-freemius-checkout.php:57
+#, php-format
+msgid "%d days trial"
+msgstr "%d jours d'essais"
 
 #: freemius-checkout-templates/single-freemius-checkout.php:65
 msgid "Monthly Price"
@@ -144,6 +155,11 @@ msgstr "Filtrer la liste des articles"
 msgid "List all Freemius Product on your WP Website"
 msgstr "Afficher tous les articles Freemius de votre site"
 
+#: inc/template-tag.php:47
+#, php-format
+msgid "From %d $"
+msgstr "À partir de% d $"
+
 #~ msgid "Checkout Freemius Settings"
 #~ msgstr "Réglages de Simple Freemius Shop"
 
@@ -212,12 +228,6 @@ msgstr "Afficher tous les articles Freemius de votre site"
 #~ msgid "image:"
 #~ msgstr "Image:"
 
-#~ msgid "%d days trial"
-#~ msgstr "%d jours d'essais"
-
-#~ msgid "From %d $"
-#~ msgstr "A Partir de %s $"
-
 #~ msgid "number:"
 #~ msgstr "Nombre:"
 
@@ -229,9 +239,6 @@ msgstr "Afficher tous les articles Freemius de votre site"
 
 #~ msgid "Display the Excerpt:"
 #~ msgstr "Afficher le résumé:"
-
-#~ msgid "From %s $"
-#~ msgstr "A partir de % $"
 
 #~ msgid "Simple Freemius Shop"
 #~ msgstr "Simple Freemius Shop"
