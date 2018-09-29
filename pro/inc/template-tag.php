@@ -44,7 +44,7 @@ function get_compare_button(){
 				<div style="clear: both"></div>
 				<div class="buy_section">
 					<button id="purchase"
-					        class="purchase"><?php printf( esc_html__( 'From %d $', 'checkout-freemius-rewamped' ), $price ); ?></button>
+					        class="purchase"><?php printf( esc_html__( 'From %d $', 'checkout-freemius-rewamped-pro' ), $price ); ?></button>
 
 					<script src="https://checkout.freemius.com/checkout.min.js"></script>
 					<script>

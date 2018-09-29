@@ -28,7 +28,7 @@ define( 'FREEMIUS_CHECKOUT_PLUGIN_DIR', untrailingslashit( FREEMIUS_CHECKOUT_PLU
 
 add_action( 'init', 'freemius_checkout_load_td__premium_only' );
 function freemius_checkout_load_td__premium_only(){
-	$lang = load_plugin_textdomain( 'checkout-freemius-rewamped', false, basename( dirname( __FILE__ ) ) . '/pro/languages' );
+	$lang = load_plugin_textdomain( 'checkout-freemius-rewamped-pro', false, basename( dirname( __FILE__ ) ) . '/pro/languages' );
 }
 
 function freemius_checkout_load_file() {
