@@ -43,6 +43,7 @@ function freemius_checkout_load_file() {
 		include_once plugin_dir_path( __FILE__ ) . '/pro/class/class-freemius-checkout-widget-pro.php';
 		include_once plugin_dir_path( __FILE__ ) . '/pro/class/class-spf-shortcode-list.php';
 		include_once plugin_dir_path( __FILE__ ) . '/pro/admin/settings.php';
+		include_once plugin_dir_path( __FILE__ ) . '/pro/inc/template-tag.php';
 
 		if ( !function_exists( 'fs_members_dashboard_shortcode' ) ) {
 			/**
@@ -76,7 +77,7 @@ add_action( 'plugins_loaded', 'sfs_pro_load_textdomain__premium_only' );
  * @since 1.0.0
  */
 function sfs_pro_load_textdomain__premium_only() {
-	load_plugin_textdomain( 'checkout-freemius-rewamped', false, basename( dirname( __FILE__ ) ) . '/pro/languages' );
+	load_plugin_textdomain( 'checkout-freemius-rewamped-pro', false, basename( dirname( __FILE__ ) ) . '/pro/languages' );
 }
 
 // Create a helper function for easy SDK access.
