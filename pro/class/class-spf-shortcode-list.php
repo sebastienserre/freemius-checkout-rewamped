@@ -70,6 +70,9 @@ class Spf_Shortcode_List {
 				<?php
 
 				echo get_compare_button();
+				?>
+				</div>
+<?php
 					}
 				}
 
