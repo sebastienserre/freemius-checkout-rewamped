@@ -124,12 +124,18 @@ class Freemius_Checkout_Widget_Pro extends WP_Widget {
 						if ( have_rows( 'freemius_checkout_pricing', $product->ID ) ) {
 
 							$i = 1;
-							while ( have_rows( 'freemius_checkout_pricing', $product->ID ) && $i < 2 ) {
+							while ( have_rows( 'freemius_checkout_pricing', $product->ID ) && $i < 2  ) {
 								the_row();
 
 								$plugin_id      = get_field( 'freemius_checkout_public_id', $product->ID );
 								$plugin_pub_key = get_field( 'freemius_checkout_public_key', $product->ID );
-								$price          = get_sub_field( 'freemius_checkout_monthly_price', $product->ID );
+								$price = get_sub_field( 'freemius_checkout_monthly_price', $product->ID );
+								if ( empty( $price ) ) {
+									$price = get_sub_field( 'freemius_checkout_annual_price', $product->ID );
+								} elseif ( empty( get_sub_field( 'freemius_checkout_annual_price', $product->ID ) ) ){
+									$price = get_sub_field( 'freemius_checkout_lifetime_price', $product->ID );
+								}
+
 
 								$i ++;
 							}
