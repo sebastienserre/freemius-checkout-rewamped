@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Freemius Shop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-29 16:15+0200\n"
+"POT-Creation-Date: 2019-01-14 19:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -11,152 +11,182 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Loco https://localise.biz/\n"
 "X-Poedit-KeywordsList: _e;__;_x;_n;esc_html__\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: 3rd_party\n"
+"Language: "
 
-#: class/class-freemius-checkout-widget-pro.php:10
-msgid "Display your latest products"
+#: pro/freemius-cpt.php:12
+msgctxt "Post Type General Name"
+msgid "Freemius Products"
 msgstr ""
 
-#: class/class-freemius-checkout-widget-pro.php:141
-#: class/class-spf-shortcode-list.php:106
+#: pro/freemius-cpt.php:13
+msgctxt "Post Type Singular Name"
+msgid "Freemius Product"
+msgstr ""
+
+#: pro/freemius-cpt.php:14 pro/freemius-cpt.php:15
+msgid "Freemius Products"
+msgstr ""
+
+#: pro/freemius-cpt.php:16
+msgid "Freemius Products Archives"
+msgstr ""
+
+#: pro/freemius-cpt.php:17
+msgid "Freemius Products Attributes"
+msgstr ""
+
+#: pro/freemius-cpt.php:18
+msgid "Parent Freemius Products:"
+msgstr ""
+
+#: pro/freemius-cpt.php:19
+msgid "All Freemius Products"
+msgstr ""
+
+#: pro/freemius-cpt.php:20
+msgid "Add New Freemius Products"
+msgstr ""
+
+#: pro/freemius-cpt.php:21
+msgid "Add New"
+msgstr ""
+
+#: pro/freemius-cpt.php:22
+msgid "New Freemius Product"
+msgstr ""
+
+#: pro/freemius-cpt.php:23
+msgid "Edit Freemius Product"
+msgstr ""
+
+#: pro/freemius-cpt.php:24
+msgid "Update Freemius Product"
+msgstr ""
+
+#: pro/freemius-cpt.php:25
+msgid "View Freemius Product"
+msgstr ""
+
+#: pro/freemius-cpt.php:26
+msgid "View Freemius Products"
+msgstr ""
+
+#: pro/freemius-cpt.php:27
+msgid "Search Freemius Product"
+msgstr ""
+
+#: pro/freemius-cpt.php:28
+msgid "Not found"
+msgstr ""
+
+#: pro/freemius-cpt.php:29
+msgid "Not found in Trash"
+msgstr ""
+
+#: pro/freemius-cpt.php:30
+msgid "Featured Image"
+msgstr ""
+
+#: pro/freemius-cpt.php:31
+msgid "Set featured image"
+msgstr ""
+
+#: pro/freemius-cpt.php:32
+msgid "Remove featured image"
+msgstr ""
+
+#: pro/freemius-cpt.php:33
+msgid "Use as featured image"
+msgstr ""
+
+#: pro/freemius-cpt.php:34
+msgid "Insert into Freemius Products"
+msgstr ""
+
+#: pro/freemius-cpt.php:35
+msgid "Uploaded to this Freemius Products"
+msgstr ""
+
+#: pro/freemius-cpt.php:36
+msgid "Freemius Products list"
+msgstr ""
+
+#: pro/freemius-cpt.php:37
+msgid "Freemius Products list navigation"
+msgstr ""
+
+#: pro/freemius-cpt.php:38
+msgid "Filter Freemius Products list"
+msgstr ""
+
+#: pro/freemius-cpt.php:47
+msgid "Freemius Product"
+msgstr ""
+
+#: pro/freemius-cpt.php:48
+msgid "List all Freemius Product on your WP Website"
+msgstr ""
+
+#: pro/inc/template-tag.php:49
+#: pro/class/class-freemius-checkout-widget-pro.php:147
 #, php-format
 msgid "From %s $"
 msgstr ""
 
-#: class/class-spf-shortcode-list.php:67
-msgid "Read More"
+#: pro/inc/template-tag.php:82
+msgid "Buy It"
 msgstr ""
 
-#: freemius-checkout-templates/single-freemius-checkout.php:57
+#: pro/freemius-checkout-templates/single-freemius-checkout.php:57
 #, php-format
 msgid "%d days trial"
 msgstr ""
 
-#: freemius-checkout-templates/single-freemius-checkout.php:65
+#: pro/freemius-checkout-templates/single-freemius-checkout.php:65
 msgid "Monthly Price"
 msgstr ""
 
-#: freemius-checkout-templates/single-freemius-checkout.php:74
+#: pro/freemius-checkout-templates/single-freemius-checkout.php:74
 msgid "Annual Price"
 msgstr ""
 
-#: freemius-checkout-templates/single-freemius-checkout.php:83
+#: pro/freemius-checkout-templates/single-freemius-checkout.php:83
 msgid "Lifetime Price"
 msgstr ""
 
-#: freemius-checkout-templates/single-freemius-checkout.php:93
+#: pro/freemius-checkout-templates/single-freemius-checkout.php:93
 msgid "Buy it!"
 msgstr ""
 
-#: freemius-cpt.php:12 freemius-cpt.php:14 freemius-cpt.php:15
-msgid "Freemius Products"
+#: pro/class/class-spf-shortcode-list.php:67
+msgid "Read More"
 msgstr ""
 
-#: freemius-cpt.php:13 freemius-cpt.php:47
-msgid "Freemius Product"
+#: pro/class/class-freemius-checkout-widget-pro.php:10
+msgid "Display your latest products"
 msgstr ""
 
-#: freemius-cpt.php:16
-msgid "Freemius Products Archives"
+#: pro/class/class-freemius-checkout-widget-pro.php:32
+msgid "Title:"
 msgstr ""
 
-#: freemius-cpt.php:17
-msgid "Freemius Products Attributes"
+#: pro/class/class-freemius-checkout-widget-pro.php:40
+msgid "number:"
 msgstr ""
 
-#: freemius-cpt.php:18
-msgid "Parent Freemius Products:"
+#: pro/class/class-freemius-checkout-widget-pro.php:47
+msgid "Display Thumbnail:"
 msgstr ""
 
-#: freemius-cpt.php:19
-msgid "All Freemius Products"
+#: pro/class/class-freemius-checkout-widget-pro.php:54
+msgid "Display buy button:"
 msgstr ""
 
-#: freemius-cpt.php:20
-msgid "Add New Freemius Products"
-msgstr ""
-
-#: freemius-cpt.php:21
-msgid "Add New"
-msgstr ""
-
-#: freemius-cpt.php:22
-msgid "New Freemius Product"
-msgstr ""
-
-#: freemius-cpt.php:23
-msgid "Edit Freemius Product"
-msgstr ""
-
-#: freemius-cpt.php:24
-msgid "Update Freemius Product"
-msgstr ""
-
-#: freemius-cpt.php:25
-msgid "View Freemius Product"
-msgstr ""
-
-#: freemius-cpt.php:26
-msgid "View Freemius Products"
-msgstr ""
-
-#: freemius-cpt.php:27
-msgid "Search Freemius Product"
-msgstr ""
-
-#: freemius-cpt.php:28
-msgid "Not found"
-msgstr ""
-
-#: freemius-cpt.php:29
-msgid "Not found in Trash"
-msgstr ""
-
-#: freemius-cpt.php:30
-msgid "Featured Image"
-msgstr ""
-
-#: freemius-cpt.php:31
-msgid "Set featured image"
-msgstr ""
-
-#: freemius-cpt.php:32
-msgid "Remove featured image"
-msgstr ""
-
-#: freemius-cpt.php:33
-msgid "Use as featured image"
-msgstr ""
-
-#: freemius-cpt.php:34
-msgid "Insert into Freemius Products"
-msgstr ""
-
-#: freemius-cpt.php:35
-msgid "Uploaded to this Freemius Products"
-msgstr ""
-
-#: freemius-cpt.php:36
-msgid "Freemius Products list"
-msgstr ""
-
-#: freemius-cpt.php:37
-msgid "Freemius Products list navigation"
-msgstr ""
-
-#: freemius-cpt.php:38
-msgid "Filter Freemius Products list"
-msgstr ""
-
-#: freemius-cpt.php:48
-msgid "List all Freemius Product on your WP Website"
-msgstr ""
-
-#: inc/template-tag.php:47
-#, php-format
-msgid "From %d $"
+#: pro/class/class-freemius-checkout-widget-pro.php:61
+msgid "Display the Excerpt:"
 msgstr ""
