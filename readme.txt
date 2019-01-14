@@ -2,8 +2,8 @@
 Contributors: sebastienserre
 Tags: freemius, checkout, buy button, e-shop, e-commerce, ecommerce, store, sales, sell, shop, cart, downloadable, downloads, digital downloads, wp-ecommerce
 Requires at least: 4.6
-Tested up to: 4.9
-Stable tag: 1.3.9
+Tested up to: 5.0
+Stable tag: 1.4.1
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
