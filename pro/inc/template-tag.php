@@ -4,9 +4,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 } // Exit if accessed directly.
 
 /**
- * Display Buy Button where ever you want in your theme templates
+ * @param bool $showprice
  *
- * @return mixed|void $button html with button.
+ * @return mixed|void
  */
 function get_compare_button( $showprice = true ) {
 	if ( have_rows( 'freemius_checkout_plans' ) ) { // flexible
