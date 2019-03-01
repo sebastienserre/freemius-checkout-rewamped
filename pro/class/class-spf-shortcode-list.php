@@ -66,11 +66,6 @@ class Spf_Shortcode_List {
 					<a href="<?php the_permalink(); ?>"
 					   title="<?php the_title(); ?>"><?php _e( 'Read More', 'checkout-freemius-rewamped-pro' ) ?></a>
 
-
-				<?php
-
-				echo get_compare_button();
-				?>
 				</div>
 <?php
 					}
