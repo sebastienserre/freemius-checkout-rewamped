@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Plugins - Simple Freemius Shop - Stable (latest release)"
 "\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-14 19:14+0000\n"
-"PO-Revision-Date: 2019-01-14 19:39+0000\n"
+"POT-Creation-Date: 2018-12-31 09:45+0000\n"
+"PO-Revision-Date: 2018-12-31 09:52+0000\n"
 "Last-Translator: sebastienserre <sebastien@thivinfo.com>\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.2.0; wp-5.0.3"
+"X-Loco-Version: 2.2.0; wp-5.0.2"
 
 #: pro/freemius-cpt.php:12
 msgctxt "Post Type General Name"
@@ -131,15 +131,11 @@ msgstr "Article Freemius"
 msgid "List all Freemius Product on your WP Website"
 msgstr "Afficher tous les articles Freemius de votre site"
 
-#: pro/inc/template-tag.php:49
+#: pro/inc/template-tag.php:47
 #: pro/class/class-freemius-checkout-widget-pro.php:147
 #, php-format
 msgid "From %s $"
 msgstr "A partir de %s $"
-
-#: pro/inc/template-tag.php:82
-msgid "Buy It"
-msgstr "Acheter"
 
 #: pro/freemius-checkout-templates/single-freemius-checkout.php:57
 #, php-format
@@ -176,11 +172,11 @@ msgstr "Titre :"
 
 #: pro/class/class-freemius-checkout-widget-pro.php:40
 msgid "number:"
-msgstr "Number :"
+msgstr "Nombre :"
 
 #: pro/class/class-freemius-checkout-widget-pro.php:47
 msgid "Display Thumbnail:"
-msgstr "Afficher la miniature :"
+msgstr "Afficher l'image a la une :"
 
 #: pro/class/class-freemius-checkout-widget-pro.php:54
 msgid "Display buy button:"
@@ -188,4 +184,4 @@ msgstr "Afficher le bouton acheter :"
 
 #: pro/class/class-freemius-checkout-widget-pro.php:61
 msgid "Display the Excerpt:"
-msgstr "Afficher l'extrait :"
+msgstr "Afficher le résumé :"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Freemius Shop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-14 19:14+0000\n"
+"POT-Creation-Date: 2018-12-31 09:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -132,14 +132,10 @@ msgstr ""
 msgid "List all Freemius Product on your WP Website"
 msgstr ""
 
-#: pro/inc/template-tag.php:49
+#: pro/inc/template-tag.php:47
 #: pro/class/class-freemius-checkout-widget-pro.php:147
 #, php-format
 msgid "From %s $"
-msgstr ""
-
-#: pro/inc/template-tag.php:82
-msgid "Buy It"
 msgstr ""
 
 #: pro/freemius-checkout-templates/single-freemius-checkout.php:57

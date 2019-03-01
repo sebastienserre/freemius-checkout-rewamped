@@ -1,9 +1,9 @@
 === Simple Freemius Shop ===
 Contributors: sebastienserre
-Tags: freemius, checkout, buy button, e-shop, e-commerce
+Tags: freemius, checkout, buy button, e-shop, e-commerce, ecommerce, store, sales, sell, shop, cart, downloadable, downloads, digital downloads, wp-ecommerce
 Requires at least: 4.6
-Tested up to: 5.0
-Stable tag: 1.4.1
+Tested up to: 4.9
+Stable tag: 1.3.9
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
@@ -65,9 +65,6 @@ The theme needs to use jQuery to display the checkout popup. If it doesn't enque
 Only the pro version allow this feature. You'll find (for the moment) a custom post type with a single template (customizable).
 
 == Changelog ==
-
-= 1.4.1 == 14 jan 2019
-* add parameter to get_compare_button()
 
 = 1.3.9 == 18 nov 2018
 * BUGFIX: Price was not display if no monthly price
