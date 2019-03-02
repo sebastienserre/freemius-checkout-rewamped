@@ -4,6 +4,7 @@ Tags: freemius, checkout, buy button, e-shop, e-commerce, ecommerce, store, sale
 Requires at least: 5.1
 Stable tag: 1.5.0
 Requires PHP: 5.6
+Tested up to: 5.1
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
