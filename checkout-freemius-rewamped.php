@@ -3,13 +3,11 @@
  * Plugin Name: Simple Freemius Shop
  * Description: Sell WordPress Plugins & Themes. Anywhere. Using Freemius Checkout "Buy Now" button.
  * Plugin URI:  https://wordpress.org/plugins/checkout-freemius-rewamped/
- * Version:     1.5.0
+ * Version:     2.0.0
  * Author:      Sébastien Serre
  * Author URI:  https://thivinfo.com
  * Text Domain: checkout-freemius-rewamped
- * Domain Path: /pro/languages
  *
- * @fs_premium_only /pro/
  */
 
 
@@ -28,15 +26,13 @@ define( 'FREEMIUS_CHECKOUT_PLUGIN_DIR', untrailingslashit( FREEMIUS_CHECKOUT_PLU
 
 add_action( 'init', 'freemius_checkout_load_td__premium_only' );
 function freemius_checkout_load_td__premium_only(){
-	$lang = load_plugin_textdomain( 'checkout-freemius-rewamped-pro', false, basename( dirname( __FILE__ ) ) . '/pro/languages' );
+	$lang = load_plugin_textdomain( 'checkout-freemius-rewamped', false, basename( dirname( __FILE__ ) ) . '/pro/languages' );
 }
 
 function freemius_checkout_load_file() {
 	include_once plugin_dir_path( __FILE__ ) . '/class/class-freemius-checkout-widget.php';
 	include_once plugin_dir_path( __FILE__ ) . '/inc/checkout-freemius-shortcode.php';
 	include_once plugin_dir_path( __FILE__ ) . '/admin/settings.php';
-
-	if ( checkout_fs()->is__premium_only() ) {
 		include_once plugin_dir_path( __FILE__ ) . '/pro/freemius-cpt.php';
 		include_once plugin_dir_path( __FILE__ ) . '/pro/3rd_party/acf/acf.php';
 		include_once plugin_dir_path( __FILE__ ) . '/pro/inc/acf-fields.php';
@@ -51,23 +47,23 @@ function freemius_checkout_load_file() {
 			 */
 			include_once plugin_dir_path( __FILE__ ) . '/pro/3rd_party/freemius-dashboard.php';
 		}
-	}
+
 }
 
 add_action( 'plugins_loaded', 'freemius_checkout_load_file' );
 
-if ( checkout_fs()->is__premium_only() ) {
+
 	require_once plugin_dir_path( __FILE__ ) . '/pro/freemius-cpt.php';
 	require_once plugin_dir_path( __FILE__ ) . '/pro/freemius-checkout-pro-main.php';
-}
+
 
 register_activation_hook( __FILE__, 'freemius_checkout_flush_rewrites' );
 
 function freemius_checkout_flush_rewrites() {
-	if ( checkout_fs()->is__premium_only() ) {
+
 		freemius_cpt();
 		flush_rewrite_rules();
-	}
+
 }
 
 add_action( 'plugins_loaded', 'sfs_pro_load_textdomain__premium_only' );
@@ -77,50 +73,10 @@ add_action( 'plugins_loaded', 'sfs_pro_load_textdomain__premium_only' );
  * @since 1.0.0
  */
 function sfs_pro_load_textdomain__premium_only() {
-	load_plugin_textdomain( 'checkout-freemius-rewamped-pro', false, basename( dirname( __FILE__ ) ) . '/pro/languages' );
+	load_plugin_textdomain( 'checkout-freemius-rewamped', false, basename( dirname( __FILE__ ) ) . '/pro/languages' );
 }
 
-// Create a helper function for easy SDK access.
-function checkout_fs() {
-	global $checkout_fs;
 
-	if ( ! isset( $checkout_fs ) ) {
-		// Include Freemius SDK.
-		require_once dirname(__FILE__) . '/freemius/start.php';
-
-		$checkout_fs = fs_dynamic_init( array(
-			'id'                  => '2428',
-			'slug'                => 'checkout-freemius-rewamped',
-			'type'                => 'plugin',
-			'public_key'          => 'pk_b0ac736e083501c3550df85849737',
-			'is_premium'          => true,
-			'has_addons'          => false,
-			'has_paid_plans'      => true,
-			'trial'               => array(
-				'days'               => 30,
-				'is_require_payment' => true,
-			),
-			'menu'                => array(
-				'slug'           => 'checkout-freemius-settings',
-				'first-path'     => 'options-general.php?page=checkout-freemius-settings-pricing',
-				'contact'        => false,
-				'parent'         => array(
-					'slug' => 'options-general.php',
-				),
-			),
-			// Set the SDK to work in a sandbox mode (for development & testing).
-			// IMPORTANT: MAKE SURE TO REMOVE SECRET KEY BEFORE DEPLOYMENT.
-			'secret_key'          => 'sk_)P2{<eocvgw-6;<W%We>p{ZtT9f_O',
-		) );
-	}
-
-	return $checkout_fs;
-}
-
-// Init Freemius.
-checkout_fs();
-// Signal that SDK was initiated.
-do_action( 'checkout_fs_loaded' );
 
 add_filter('acf/settings/path', 'freemius_checkout_acf_settings_path__premium_only');
 

@@ -7,7 +7,7 @@ class Freemius_Checkout_Widget_Pro extends WP_Widget {
 	public function __construct() {
 		$widget_args = array(
 			'classname'   => 'Freemius Checkout Widget Pro',
-			'description' => __( 'Display your latest products', 'checkout-freemius-rewamped-pro' ),
+			'description' => __( 'Display your latest products', 'checkout-freemius-rewamped' ),
 		);
 		parent::__construct(
 			'freemius-checkout-widget-pro',
@@ -29,7 +29,7 @@ class Freemius_Checkout_Widget_Pro extends WP_Widget {
 	public function form( $instance ) {
 		?>
 		<p>
-			<label for="<?php echo esc_html( $this->get_field_name( 'title' ) ); ?>"> <?php esc_attr_e( 'Title:', 'checkout-freemius-rewamped-pro' ); ?>
+			<label for="<?php echo esc_html( $this->get_field_name( 'title' ) ); ?>"> <?php esc_attr_e( 'Title:', 'checkout-freemius-rewamped' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo esc_html( $this->get_field_id( 'title' ) ); ?>"
 			       name="<?php echo $this->get_field_name( 'title' ); ?>" type="text"
@@ -37,28 +37,28 @@ class Freemius_Checkout_Widget_Pro extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_name( 'number' ); ?>"> <?php esc_attr_e( 'number:', 'checkout-freemius-rewamped-pro' ); ?>
+			<label for="<?php echo $this->get_field_name( 'number' ); ?>"> <?php esc_attr_e( 'number:', 'checkout-freemius-rewamped' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>"
 			       name="<?php echo $this->get_field_name( 'number' ); ?>" type="text"
 			       value="<?php echo $instance['number']; ?>"/>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_name( 'thumbnail' ); ?>"> <?php esc_attr_e( 'Display Thumbnail:', 'checkout-freemius-rewamped-pro' ); ?>
+			<label for="<?php echo $this->get_field_name( 'thumbnail' ); ?>"> <?php esc_attr_e( 'Display Thumbnail:', 'checkout-freemius-rewamped' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'thumbnail' ); ?>"
 			       name="<?php echo $this->get_field_name( 'thumbnail' ); ?>" type="checkbox"
 			       value="yes" <?php checked( $instance['thumbnail'], 'yes' ) ?>/>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_name( 'button' ); ?>"> <?php esc_attr_e( 'Display buy button:', 'checkout-freemius-rewamped-pro' ); ?>
+			<label for="<?php echo $this->get_field_name( 'button' ); ?>"> <?php esc_attr_e( 'Display buy button:', 'checkout-freemius-rewamped' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'button' ); ?>"
 			       name="<?php echo $this->get_field_name( 'button' ); ?>" type="checkbox"
 			       value="yes" <?php checked( $instance['button'], 'yes' ) ?>/>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_name( 'excerpt' ); ?>"> <?php esc_attr_e( 'Display the Excerpt:', 'checkout-freemius-rewamped-pro' ); ?>
+			<label for="<?php echo $this->get_field_name( 'excerpt' ); ?>"> <?php esc_attr_e( 'Display the Excerpt:', 'checkout-freemius-rewamped' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'excerpt' ); ?>"
 			       name="<?php echo $this->get_field_name( 'excerpt' ); ?>" type="checkbox"
@@ -144,7 +144,7 @@ class Freemius_Checkout_Widget_Pro extends WP_Widget {
 						?>
 						<div class="buy_section">
 						<button id="purchase"
-						        class="purchase"><?php printf( esc_html__( 'From %s $', 'checkout-freemius-rewamped-pro' ), $price ); ?></button>
+						        class="purchase"><?php printf( esc_html__( 'From %s $', 'checkout-freemius-rewamped' ), $price ); ?></button>
 
 						<script src="https://checkout.freemius.com/checkout.min.js"></script>
 						<script>

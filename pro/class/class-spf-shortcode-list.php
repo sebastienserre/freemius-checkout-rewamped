@@ -64,7 +64,7 @@ class Spf_Shortcode_List {
 					}
 					?>
 					<a href="<?php the_permalink(); ?>"
-					   title="<?php the_title(); ?>"><?php _e( 'Read More', 'checkout-freemius-rewamped-pro' ) ?></a>
+					   title="<?php the_title(); ?>"><?php _e( 'Read More', 'checkout-freemius-rewamped' ) ?></a>
 
 				</div>
 <?php

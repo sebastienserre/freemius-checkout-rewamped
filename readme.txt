@@ -1,10 +1,10 @@
 === Simple Freemius Shop ===
 Contributors: sebastienserre
-Tags: freemius, checkout, buy button, e-shop, e-commerce, ecommerce, store, sales, sell, shop, cart, downloadable, downloads, digital downloads, wp-ecommerce
+Tags: freemius, checkout, e-shop, e-commerce, ecommerce
 Requires at least: 4.6
-Stable tag: 1.5.0
+Stable tag: 2.0.0
 Requires PHP: 5.6
-Tested up to: 5.1
+Tested up to: 5.2
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -44,8 +44,8 @@ Example:
 
 `[freemius_checkout name="Press Elements" plugin_id="761" plan_id="1078" pricing_id="928" public_key="pk_fe2850d57f7d4f206aefaa106b91f" button_id="purchase" button="Buy Now"]`
 
-**Pro Version**
-* The Pro Version add a CPT which allow you to have a post by product and a custom single template.
+
+* add a CPT which allow you to have a post by product and a custom single template.
 * New Widget to list your product where ever you want.
 * New Shortcode to display your products where ever you want.
 
@@ -65,6 +65,9 @@ The theme needs to use jQuery to display the checkout popup. If it doesn't enque
 Only the pro version allow this feature. You'll find (for the moment) a custom post type with a single template (customizable).
 
 == Changelog ==
+
+= 2.0.0 == 25 juin 2019
+* Pro Version Released for free
 
 = 1.3.9 == 18 nov 2018
 * BUGFIX: Price was not display if no monthly price
