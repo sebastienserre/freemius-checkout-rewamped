@@ -105,6 +105,7 @@ get_header();
                                                     public_key: '<?php echo $plugin_pub_key; } ?>',
 													<?php if ( ! empty( $pricing_id ) ){ ?>
                                                     pricing_id: '<?php echo $pricing_id; } ?>',
+                                                    currency: 'eur',
                                                 });
 											</script>
 
